@@ -1,5 +1,3 @@
-//Entity class that contains data to be able to determine survivability
-
 public class Ent
 {
   public Ent(long ent_seed)
