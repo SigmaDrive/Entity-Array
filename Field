@@ -2,25 +2,38 @@ import java.util.Random;
 
 public class Field
 {
-  public static void  main(String[] args)
+  //method to find a 10-digit seed
+  public static long getSeed()
   {
     Random generator = new Random();
     long seed = 0;
-    Ent[][] entArray = new Ent[10][10];
+    for (int count = 0; count < 10; count ++)
+    {
+      seed += Math.abs(generator.nextLong()) % 10;
+      if (count != 9)
+        seed *= 10;
+    }
+    return seed;
+  }
+  
+  //method to get a biome dependant on the array location and world seed
+  public static int getBiome(int arrayX, int arrayY, long seed)
+  {
+    
+  }
+  
+  //execution method
+  public static void  main(String[] args)
+  {
+    long worldSeed = Field.getSeed(), localSeed = 0;
+    EntSlot[][] entArray = new EntSlot[10][10];
     for (int x = 0; x < entArray.length; x ++)
     {
       for (int y = 0; y < entArray[x].length; y ++)
       {
-        //sets up a random 10-digit seed
-        seed = 0;
-        for (int count = 0; count < 10; count ++)
-        {
-          seed += Math.abs(generator.nextLong()) % 10;
-          if (count != 9)
-            seed *= 10;
-        }
+        localSeed = Field.getSeed();
         //implements seed into the ENTs
-        
+        EntSlot entity = new EntSlot((int)(Math.random() * 10), worldSeed, localSeed);
       }
     }
   }
