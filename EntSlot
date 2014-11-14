@@ -2,7 +2,7 @@
 
 public class EntSlot
 {
-  public EntSlot(int biome)
+  public EntSlot(int biome, long globalSeed, long localSeed)
   {
     int slotBiome = biome;
   }
