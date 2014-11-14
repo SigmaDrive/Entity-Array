@@ -16,12 +16,6 @@ public class Field
     return seed;
   }
   
-  //method to get a biome dependant on the array location and world seed
-  public static int getBiome(int arrayX, int arrayY, long seed)
-  {
-    
-  }
-  
   //execution method
   public static void  main(String[] args)
   {
