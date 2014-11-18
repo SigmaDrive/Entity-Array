@@ -1,9 +1,10 @@
-//This will be the 'space' that the entities are within, as well as allowing use of a biome system
+//This will be the 'space' that the entities are within, which allows me to make addons for the program later
 
 public class EntSlot
 {
-  public EntSlot(int biome, long globalSeed, long localSeed)
+  //basic constructor
+  public EntSlot(long localSeed, long globalSeed)
   {
-    int slotBiome = biome;
+  
   }
 }
