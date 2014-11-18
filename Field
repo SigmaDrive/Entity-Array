@@ -27,7 +27,7 @@ public class Field
       {
         localSeed = Field.getSeed();
         //implements seed into the ENTs
-        EntSlot entity = new EntSlot((int)(Math.random() * 10), worldSeed, localSeed);
+        EntSlot entity = new EntSlot(localSeed, worldSeed);
       }
     }
   }
