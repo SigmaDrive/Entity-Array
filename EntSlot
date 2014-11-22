@@ -6,8 +6,9 @@ public class EntSlot
 Ent slotEnt;
 
   //basic constructor
-  public EntSlot(long localSeed, long globalSeed)
+  public EntSlot(long localSeed)
   {
-    slotEnt = new Ent(
+    slotEnt = new Ent(localSeed);
+    
   }
 }
