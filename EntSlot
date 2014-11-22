@@ -3,12 +3,15 @@
 public class EntSlot
 {
 
+public void defend(Ent attacker)
+{
+  
+}
 Ent slotEnt;
 
   //basic constructor
   public EntSlot(long localSeed)
   {
     slotEnt = new Ent(localSeed);
-    
   }
 }
