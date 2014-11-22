@@ -19,15 +19,14 @@ public class Field
   //execution method
   public static void  main(String[] args)
   {
-    long worldSeed = Field.getSeed(), localSeed = 0;
+    long localSeed = 0;
     EntSlot[][] entArray = new EntSlot[10][10];
     for (int x = 0; x < entArray.length; x ++)
     {
       for (int y = 0; y < entArray[x].length; y ++)
       {
         localSeed = Field.getSeed();
-        //implements seed into the ENTs
-        EntSlot entity = new EntSlot(localSeed, worldSeed);
+        EntSlot entity = new EntSlot(localSeed);
       }
     }
   }
