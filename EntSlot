@@ -2,9 +2,12 @@
 
 public class EntSlot
 {
+
+Ent slotEnt;
+
   //basic constructor
   public EntSlot(long localSeed, long globalSeed)
   {
-  
+    slotEnt = new Ent(
   }
 }
