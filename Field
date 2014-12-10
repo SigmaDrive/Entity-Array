@@ -2,32 +2,16 @@ import java.util.Random;
 
 public class Field
 {
-  //method to find a 10-digit seed
-  public static long getSeed()
-  {
-    Random generator = new Random();
-    long seed = 0;
-    for (int count = 0; count < 10; count ++)
-    {
-      seed += Math.abs(generator.nextLong()) % 10;
-      if (count != 9)
-        seed *= 10;
-    }
-    return seed;
-  }
-  
   //execution method
   public static void  main(String[] args)
   {
-    long localSeed = 0;
-    EntSlot[][] entArray = new EntSlot[10][10];
+    Random generator = new Random();
+    int localSeed = 0;
+    EntSlot[] entArray = new EntSlot[100];
     for (int x = 0; x < entArray.length; x ++)
     {
-      for (int y = 0; y < entArray[x].length; y ++)
-      {
-        localSeed = Field.getSeed();
-        EntSlot entity = new EntSlot(localSeed);
-      }
+      localSeed = generator.nextInt(1000);
+      
     }
   }
 }
