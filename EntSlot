@@ -2,15 +2,23 @@
 
 public class EntSlot
 {
-
-public void defend(Ent attacker)
-{
+  Ent slotEnt;
+  int adj1, adj2, adj3, adj4;
   
-}
-Ent slotEnt;
+  //method to find adjacent squares using the index number
+  public void adjFind(int index)
+  {
+    
+  }
+  
+  //invasion/attack method
+  public boolean invade(Ent attacker, Ent defender)
+  {
+    
+  }
 
   //basic constructor
-  public EntSlot(long localSeed)
+  public EntSlot(int localSeed)
   {
     slotEnt = new Ent(localSeed);
   }
