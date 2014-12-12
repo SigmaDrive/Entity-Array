@@ -2,16 +2,36 @@ import java.util.Random;
 
 public class Field
 {
+  //execute turn method
+  public static void turn(EntSlot[] array)
+  {
+    for(int i = 0; i < array.length; i++)
+    {
+      Random generator = new Random();
+      if (array[i].slotEnt.aggro >= generator(10))
+      {
+        if (
+      }
+    }
+  }
+  
   //execution method
   public static void  main(String[] args)
   {
     Random generator = new Random();
-    int localSeed = 0;
     EntSlot[] entArray = new EntSlot[100];
-    for (int x = 0; x < entArray.length; x ++)
+    char sentinel = 'Y';
+    
+    for (int i = 0; i < entArray.length; i++)
     {
-      localSeed = generator.nextInt(1000);
-      
+      EntSlot[i] = new EntSlot(generator.nextInt(1000));
+      EntSlot[i].adjFind();
+    }
+    while (sentinel == 'Y')
+    {
+      Field.turn(entArray);
+      System.out.println("Do you want to continue? Y/N");
+      sentinel = scan.nextLine().charAt(0);
     }
   }
 }
