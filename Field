@@ -10,7 +10,7 @@ public class Field
       Random generator = new Random();
       if (array[i].slotEnt.aggro >= generator(10))
       {
-        if (
+        //find a random adjacent target and invade
       }
     }
   }
