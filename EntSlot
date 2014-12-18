@@ -50,9 +50,9 @@ public class EntSlot
   }
   
   //invasion/attack method
-  public boolean invade(Ent defender)
+  public boolean invade(EntSlot defender)
   {
-    return slotEnt.attack > defender.defense;
+    return slotEnt.attack > defender.slotEnt.defense;
   }
   
   //"self-destruct" method
