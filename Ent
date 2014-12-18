@@ -5,20 +5,11 @@ public class Ent
   int aggro;
   int attack;
   int defense;
-  int speciesCode;
   
   public Ent(int ent_seed)
   {
     aggro = ent_seed / 100;
     attack = ent_seed / 10 % 10;
     defense = ent_seed % 10;
-  }
-  
-  public changeSpecies(Ent invader)
-  {
-    aggro = invader.aggro;
-    attack = invader.attack;
-    defense = invader.defense;
-    speciesCode = invader.speciesCode;
   }
 }
