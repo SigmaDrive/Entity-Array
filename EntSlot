@@ -1,4 +1,5 @@
 //This will be the 'space' that the entities are within, which allows me to make addons for the program later
+import java.util.Random;
 
 public class EntSlot
 {
@@ -52,6 +53,40 @@ public class EntSlot
   public boolean invade(Ent defender)
   {
     return slotEnt.attack > defender.defense;
+  }
+  
+  //"self-destruct" method
+  public void changeSpecies(Ent attacker)
+  {
+    slotEnt = attacker;
+  }
+  
+  //evolution method (10% chance of evolution for each stat)
+  public void evolve()
+  {
+    Random generator = new Random();
+    final int EVOLVE_CONDITION = generator.nextInt(10);
+    for (int i = 0; i < 3; i++)
+    {
+      if (generator.nextInt(10) == EVOLVE_CONDITION)
+      {
+        if (i == 0)
+          if (generator.nextInt(2) == 0)
+            aggro += EVOLVE_CONDITION;
+          else
+            aggro -= EVOLVE_CONDITION;
+        else if (i == 1)
+          if (generator.nextInt(2) == 0)
+            strength += EVOLVE_CONDITION;
+          else
+            strength += EVOLVE_CONDITION;
+        else
+          if (generator.nextInt(2) == 0)
+            defense += EVOLVE_CONDITION;
+          else
+            defense -= EVOLVE_CONDITION;
+      }
+    }
   }
 
   //basic constructor
