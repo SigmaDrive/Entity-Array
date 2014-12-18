@@ -3,15 +3,41 @@ import java.util.Random;
 public class Field
 {
   //execute turn method
-  public static void turn(EntSlot[] array)
+  private static void turn(EntSlot[] array)
   {
+    int adjAttacked;
+    boolean hasAttacked = false;
     for(int i = 0; i < array.length; i++)
     {
-      Random generator = new Random();
       if (array[i].slotEnt.aggro >= generator(10))
       {
-        //find a random adjacent target and invade
+        while (!hasAttacked)
+        {
+          hasAttacked = true;
+          adjAttacked = generator.nextInt(4);
+          if (array[i].adj1 != -1 && adjAttacked == 0)
+          {
+            if (array[i].invade(array[array[i].adj1]))
+              array[array[i].adj1].changeSpecies(array[i]);
+          } else if (array[i].adj2 != -1 && adjAttacked == 1)
+          {
+            if (array[i].invade(array[array[i].adj2]))
+              array[array[i].adj2].changeSpecies(array[i]);
+          } else if (array[i].adj3 != -1 && adjAttacked == 2)
+          {
+            if (array[i].invade(array[array[i].adj3]))
+              array[array[i].adj3].changeSpecies(array[i]);
+          } else if (array[i].adj1 != -1 && adjAttacked = 3)
+          {
+            if (array[i].invade(array[array[i].adj4]))
+              array[array[i].adj4].changeSpecies(array[i]);
+          } else
+          {
+            hasAttacked = false;
+          }
+        }
       }
+      array[i].evolve();
     }
   }
   
@@ -25,7 +51,7 @@ public class Field
     for (int i = 0; i < entArray.length; i++)
     {
       EntSlot[i] = new EntSlot(generator.nextInt(1000));
-      EntSlot[i].adjFind();
+      EntSlot[i].adjFind(i);
     }
     while (sentinel == 'Y')
     {
